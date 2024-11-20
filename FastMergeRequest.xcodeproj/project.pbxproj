@@ -1,0 +1,1097 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7012CE5D2C7F1AA300BE53BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CE5C2C7F1AA300BE53BA /* AppDelegate.swift */; };
+		7012CE5F2C7F1AA300BE53BA /* FMRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CE5E2C7F1AA300BE53BA /* FMRViewController.swift */; };
+		7012CE612C7F1AA500BE53BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7012CE602C7F1AA500BE53BA /* Assets.xcassets */; };
+		7012CE642C7F1AA500BE53BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7012CE622C7F1AA500BE53BA /* Main.storyboard */; };
+		7012CE6F2C7F1AA600BE53BA /* FastMergeRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CE6E2C7F1AA600BE53BA /* FastMergeRequestTests.swift */; };
+		7012CE792C7F1AA600BE53BA /* FastMergeRequestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CE782C7F1AA600BE53BA /* FastMergeRequestUITests.swift */; };
+		7012CE7B2C7F1AA600BE53BA /* FastMergeRequestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CE7A2C7F1AA600BE53BA /* FastMergeRequestUITestsLaunchTests.swift */; };
+		7012CE9F2C7F1DD400BE53BA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7012CE9E2C7F1DD400BE53BA /* Cocoa.framework */; };
+		7012CEA42C7F1DD400BE53BA /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CEA32C7F1DD400BE53BA /* SourceEditorExtension.swift */; };
+		7012CEA62C7F1DD400BE53BA /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CEA52C7F1DD400BE53BA /* SourceEditorCommand.swift */; };
+		7012CEAB2C7F1DD400BE53BA /* FastMergeRequestExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7012CE9C2C7F1DD400BE53BA /* FastMergeRequestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7012CEB02C7F1F0300BE53BA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7012CEA02C7F1DD400BE53BA /* XcodeKit.framework */; };
+		7012CEB12C7F1F0300BE53BA /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7012CEA02C7F1DD400BE53BA /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7012CEB42C8022B600BE53BA /* FMRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012CEB32C8022B600BE53BA /* FMRLoadingView.swift */; };
+		70333B3F2CB53DCB001EF97F /* FMRMenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70333B3E2CB53DCB001EF97F /* FMRMenuTableCell.xib */; };
+		70333B412CB53E27001EF97F /* FMRMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70333B402CB53E27001EF97F /* FMRMenuTableCell.swift */; };
+		70333B452CB91E28001EF97F /* FMRConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70333B442CB91E28001EF97F /* FMRConfigurationView.swift */; };
+		703D631F2CCF364100760730 /* FMRAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D631E2CCF364100760730 /* FMRAccountManager.swift */; };
+		703D63212CCF9E6800760730 /* FMRGitlabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63202CCF9E6800760730 /* FMRGitlabAPIClient.swift */; };
+		703D63232CD1D51700760730 /* FMRMergeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63222CD1D51600760730 /* FMRMergeRequestModel.swift */; };
+		703D63262CD2200B00760730 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 703D63252CD2200B00760730 /* Kingfisher */; };
+		703D636D2CDCBDB600760730 /* FMRUserEndpointGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D636C2CDCBDB600760730 /* FMRUserEndpointGroup.swift */; };
+		703D63702CE1B2EB00760730 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 703D636F2CE1B2EB00760730 /* RxBlocking */; };
+		703D63722CE1B2EB00760730 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 703D63712CE1B2EB00760730 /* RxCocoa */; };
+		703D63742CE1B2EB00760730 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 703D63732CE1B2EB00760730 /* RxRelay */; };
+		703D63762CE2027100760730 /* FMRHostCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63752CE2027100760730 /* FMRHostCommunicator.swift */; };
+		703D63782CE2051F00760730 /* FMREndpointGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63772CE2051F00760730 /* FMREndpointGroup.swift */; };
+		703D637A2CE3277300760730 /* FMRAddAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63792CE3277300760730 /* FMRAddAccountViewModel.swift */; };
+		703D637D2CE4A3F600760730 /* FMRSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D637C2CE4A3F600760730 /* FMRSettingViewModel.swift */; };
+		703D637F2CE4A48500760730 /* FMRVerify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D637E2CE4A48500760730 /* FMRVerify.swift */; };
+		703D63812CE6ED6500760730 /* FMRMergeRequestEndpointGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63802CE6ED6500760730 /* FMRMergeRequestEndpointGroup.swift */; };
+		703D63842CE7217000760730 /* FMRBranchEndpointGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63832CE7217000760730 /* FMRBranchEndpointGroup.swift */; };
+		703D63862CE7238D00760730 /* FMRBranchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63852CE7238D00760730 /* FMRBranchModel.swift */; };
+		703D63882CE7246800760730 /* FMRMergeRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D63872CE7246800760730 /* FMRMergeRequestViewModel.swift */; };
+		704479CE2C85DCE8005A1449 /* FMRToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479CD2C85DCE8005A1449 /* FMRToast.swift */; };
+		704479D02C86BB5A005A1449 /* FMRNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479CF2C86BB5A005A1449 /* FMRNavigationViewController.swift */; };
+		704479DC2C885787005A1449 /* PodfileAnalysis.rb in Resources */ = {isa = PBXBuildFile; fileRef = 704479DB2C885787005A1449 /* PodfileAnalysis.rb */; };
+		704479DE2C885ED1005A1449 /* FMRCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479DD2C885ED1005A1449 /* FMRCmd.swift */; };
+		704479E02C885F06005A1449 /* FMRPodfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479DF2C885F06005A1449 /* FMRPodfile.swift */; };
+		704479E32C8962B4005A1449 /* podfile.rb in Resources */ = {isa = PBXBuildFile; fileRef = 704479E12C8962B4005A1449 /* podfile.rb */; };
+		704479E42C8962B4005A1449 /* DSL.rb in Resources */ = {isa = PBXBuildFile; fileRef = 704479E22C8962B4005A1449 /* DSL.rb */; };
+		704479E62C89AAE4005A1449 /* FMRTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479E52C89AAE4005A1449 /* FMRTool.swift */; };
+		704479E82C8AF94E005A1449 /* FMRFileAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704479E72C8AF94E005A1449 /* FMRFileAccessManager.swift */; };
+		7058FE472C806EA70001696D /* FMRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE462C806EA70001696D /* FMRHomeViewController.swift */; };
+		7058FE492C81A4170001696D /* FMRApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE482C81A4170001696D /* FMRApplication.swift */; };
+		7058FE4B2C81C2000001696D /* FMRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE4A2C81C2000001696D /* FMRSettingViewController.swift */; };
+		7077D34B2CBE4CED009DE310 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D34A2CBE4CED009DE310 /* NibView.swift */; };
+		7077D3532CC0B376009DE310 /* FMRConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7077D3522CC0B376009DE310 /* FMRConfigurationView.xib */; };
+		7077D3552CC10080009DE310 /* FMRAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7077D3542CC10080009DE310 /* FMRAccountView.xib */; };
+		7077D3572CC1009F009DE310 /* FMRAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D3562CC1009F009DE310 /* FMRAccountView.swift */; };
+		7077D3592CC20A62009DE310 /* FMRCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D3582CC20A62009DE310 /* FMRCheckCell.swift */; };
+		7077D35B2CC23BA3009DE310 /* FMRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D35A2CC23BA3009DE310 /* FMRCache.swift */; };
+		7077D35E2CC655AA009DE310 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7077D35D2CC655AA009DE310 /* Alamofire */; };
+		7077D3642CC674B1009DE310 /* FMRAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D3632CC674B1009DE310 /* FMRAccountModel.swift */; };
+		7077D3662CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D3652CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7012CE6B2C7F1AA600BE53BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7012CE512C7F1AA300BE53BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7012CE582C7F1AA300BE53BA;
+			remoteInfo = FastMergeRequest;
+		};
+		7012CE752C7F1AA600BE53BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7012CE512C7F1AA300BE53BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7012CE582C7F1AA300BE53BA;
+			remoteInfo = FastMergeRequest;
+		};
+		7012CEA92C7F1DD400BE53BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7012CE512C7F1AA300BE53BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7012CE9B2C7F1DD400BE53BA;
+			remoteInfo = FastMergeRequestExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7012CE972C7F1BB500BE53BA /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CEAF2C7F1DD400BE53BA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7012CEAB2C7F1DD400BE53BA /* FastMergeRequestExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CEB22C7F1F0300BE53BA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7012CEB12C7F1F0300BE53BA /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7012CE592C7F1AA300BE53BA /* FastMergeRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastMergeRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7012CE5C2C7F1AA300BE53BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7012CE5E2C7F1AA300BE53BA /* FMRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRViewController.swift; sourceTree = "<group>"; };
+		7012CE602C7F1AA500BE53BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7012CE632C7F1AA500BE53BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7012CE652C7F1AA500BE53BA /* FastMergeRequest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastMergeRequest.entitlements; sourceTree = "<group>"; };
+		7012CE6A2C7F1AA600BE53BA /* FastMergeRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastMergeRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7012CE6E2C7F1AA600BE53BA /* FastMergeRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastMergeRequestTests.swift; sourceTree = "<group>"; };
+		7012CE742C7F1AA600BE53BA /* FastMergeRequestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastMergeRequestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7012CE782C7F1AA600BE53BA /* FastMergeRequestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastMergeRequestUITests.swift; sourceTree = "<group>"; };
+		7012CE7A2C7F1AA600BE53BA /* FastMergeRequestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastMergeRequestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7012CE9C2C7F1DD400BE53BA /* FastMergeRequestExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FastMergeRequestExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7012CE9E2C7F1DD400BE53BA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7012CEA02C7F1DD400BE53BA /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		7012CEA32C7F1DD400BE53BA /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		7012CEA52C7F1DD400BE53BA /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		7012CEA72C7F1DD400BE53BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7012CEA82C7F1DD400BE53BA /* FastMergeRequestExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastMergeRequestExtension.entitlements; sourceTree = "<group>"; };
+		7012CEB32C8022B600BE53BA /* FMRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRLoadingView.swift; sourceTree = "<group>"; };
+		70333B3E2CB53DCB001EF97F /* FMRMenuTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRMenuTableCell.xib; sourceTree = "<group>"; };
+		70333B402CB53E27001EF97F /* FMRMenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRMenuTableCell.swift; sourceTree = "<group>"; };
+		70333B442CB91E28001EF97F /* FMRConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRConfigurationView.swift; sourceTree = "<group>"; };
+		703D631E2CCF364100760730 /* FMRAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRAccountManager.swift; sourceTree = "<group>"; };
+		703D63202CCF9E6800760730 /* FMRGitlabAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRGitlabAPIClient.swift; sourceTree = "<group>"; };
+		703D63222CD1D51600760730 /* FMRMergeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRMergeRequestModel.swift; sourceTree = "<group>"; };
+		703D636C2CDCBDB600760730 /* FMRUserEndpointGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRUserEndpointGroup.swift; sourceTree = "<group>"; };
+		703D63752CE2027100760730 /* FMRHostCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRHostCommunicator.swift; sourceTree = "<group>"; };
+		703D63772CE2051F00760730 /* FMREndpointGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMREndpointGroup.swift; sourceTree = "<group>"; };
+		703D63792CE3277300760730 /* FMRAddAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRAddAccountViewModel.swift; sourceTree = "<group>"; };
+		703D637C2CE4A3F600760730 /* FMRSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRSettingViewModel.swift; sourceTree = "<group>"; };
+		703D637E2CE4A48500760730 /* FMRVerify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRVerify.swift; sourceTree = "<group>"; };
+		703D63802CE6ED6500760730 /* FMRMergeRequestEndpointGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRMergeRequestEndpointGroup.swift; sourceTree = "<group>"; };
+		703D63832CE7217000760730 /* FMRBranchEndpointGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRBranchEndpointGroup.swift; sourceTree = "<group>"; };
+		703D63852CE7238D00760730 /* FMRBranchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRBranchModel.swift; sourceTree = "<group>"; };
+		703D63872CE7246800760730 /* FMRMergeRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRMergeRequestViewModel.swift; sourceTree = "<group>"; };
+		704479C82C8570A3005A1449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		704479CD2C85DCE8005A1449 /* FMRToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRToast.swift; sourceTree = "<group>"; };
+		704479CF2C86BB5A005A1449 /* FMRNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRNavigationViewController.swift; sourceTree = "<group>"; };
+		704479DB2C885787005A1449 /* PodfileAnalysis.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PodfileAnalysis.rb; sourceTree = "<group>"; };
+		704479DD2C885ED1005A1449 /* FMRCmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRCmd.swift; sourceTree = "<group>"; };
+		704479DF2C885F06005A1449 /* FMRPodfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRPodfile.swift; sourceTree = "<group>"; };
+		704479E12C8962B4005A1449 /* podfile.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = podfile.rb; sourceTree = "<group>"; };
+		704479E22C8962B4005A1449 /* DSL.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DSL.rb; sourceTree = "<group>"; };
+		704479E52C89AAE4005A1449 /* FMRTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRTool.swift; sourceTree = "<group>"; };
+		704479E72C8AF94E005A1449 /* FMRFileAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRFileAccessManager.swift; sourceTree = "<group>"; };
+		7058FE462C806EA70001696D /* FMRHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRHomeViewController.swift; sourceTree = "<group>"; };
+		7058FE482C81A4170001696D /* FMRApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRApplication.swift; sourceTree = "<group>"; };
+		7058FE4A2C81C2000001696D /* FMRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRSettingViewController.swift; sourceTree = "<group>"; };
+		7077D34A2CBE4CED009DE310 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		7077D3522CC0B376009DE310 /* FMRConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRConfigurationView.xib; sourceTree = "<group>"; };
+		7077D3542CC10080009DE310 /* FMRAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRAccountView.xib; sourceTree = "<group>"; };
+		7077D3562CC1009F009DE310 /* FMRAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRAccountView.swift; sourceTree = "<group>"; };
+		7077D3582CC20A62009DE310 /* FMRCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRCheckCell.swift; sourceTree = "<group>"; };
+		7077D35A2CC23BA3009DE310 /* FMRCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRCache.swift; sourceTree = "<group>"; };
+		7077D3632CC674B1009DE310 /* FMRAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRAccountModel.swift; sourceTree = "<group>"; };
+		7077D3652CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRAddGitlabAccountViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7012CE562C7F1AA300BE53BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				703D63742CE1B2EB00760730 /* RxRelay in Frameworks */,
+				703D63262CD2200B00760730 /* Kingfisher in Frameworks */,
+				703D63702CE1B2EB00760730 /* RxBlocking in Frameworks */,
+				703D63722CE1B2EB00760730 /* RxCocoa in Frameworks */,
+				7077D35E2CC655AA009DE310 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE672C7F1AA600BE53BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE712C7F1AA600BE53BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE992C7F1DD400BE53BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7012CE9F2C7F1DD400BE53BA /* Cocoa.framework in Frameworks */,
+				7012CEB02C7F1F0300BE53BA /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7012CE502C7F1AA300BE53BA = {
+			isa = PBXGroup;
+			children = (
+				7012CE5B2C7F1AA300BE53BA /* FastMergeRequest */,
+				7012CE6D2C7F1AA600BE53BA /* FastMergeRequestTests */,
+				7012CE772C7F1AA600BE53BA /* FastMergeRequestUITests */,
+				7012CEA22C7F1DD400BE53BA /* FastMergeRequestExtension */,
+				7012CE9D2C7F1DD400BE53BA /* Frameworks */,
+				7012CE5A2C7F1AA300BE53BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7012CE5A2C7F1AA300BE53BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7012CE592C7F1AA300BE53BA /* FastMergeRequest.app */,
+				7012CE6A2C7F1AA600BE53BA /* FastMergeRequestTests.xctest */,
+				7012CE742C7F1AA600BE53BA /* FastMergeRequestUITests.xctest */,
+				7012CE9C2C7F1DD400BE53BA /* FastMergeRequestExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7012CE5B2C7F1AA300BE53BA /* FastMergeRequest */ = {
+			isa = PBXGroup;
+			children = (
+				704479D22C880873005A1449 /* Class */,
+				704479D12C880866005A1449 /* Ruby */,
+				704479C82C8570A3005A1449 /* Info.plist */,
+				7012CE602C7F1AA500BE53BA /* Assets.xcassets */,
+				7012CE622C7F1AA500BE53BA /* Main.storyboard */,
+				70333B3E2CB53DCB001EF97F /* FMRMenuTableCell.xib */,
+				7077D3522CC0B376009DE310 /* FMRConfigurationView.xib */,
+				7077D3542CC10080009DE310 /* FMRAccountView.xib */,
+				7012CE652C7F1AA500BE53BA /* FastMergeRequest.entitlements */,
+			);
+			path = FastMergeRequest;
+			sourceTree = "<group>";
+		};
+		7012CE6D2C7F1AA600BE53BA /* FastMergeRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				7012CE6E2C7F1AA600BE53BA /* FastMergeRequestTests.swift */,
+			);
+			path = FastMergeRequestTests;
+			sourceTree = "<group>";
+		};
+		7012CE772C7F1AA600BE53BA /* FastMergeRequestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7012CE782C7F1AA600BE53BA /* FastMergeRequestUITests.swift */,
+				7012CE7A2C7F1AA600BE53BA /* FastMergeRequestUITestsLaunchTests.swift */,
+			);
+			path = FastMergeRequestUITests;
+			sourceTree = "<group>";
+		};
+		7012CE9D2C7F1DD400BE53BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7012CE9E2C7F1DD400BE53BA /* Cocoa.framework */,
+				7012CEA02C7F1DD400BE53BA /* XcodeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7012CEA22C7F1DD400BE53BA /* FastMergeRequestExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7012CEA32C7F1DD400BE53BA /* SourceEditorExtension.swift */,
+				7012CEA52C7F1DD400BE53BA /* SourceEditorCommand.swift */,
+				7012CEA72C7F1DD400BE53BA /* Info.plist */,
+				7012CEA82C7F1DD400BE53BA /* FastMergeRequestExtension.entitlements */,
+			);
+			path = FastMergeRequestExtension;
+			sourceTree = "<group>";
+		};
+		703D631D2CCB755E00760730 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				703D63202CCF9E6800760730 /* FMRGitlabAPIClient.swift */,
+				703D63772CE2051F00760730 /* FMREndpointGroup.swift */,
+				703D636C2CDCBDB600760730 /* FMRUserEndpointGroup.swift */,
+				703D63802CE6ED6500760730 /* FMRMergeRequestEndpointGroup.swift */,
+				703D63752CE2027100760730 /* FMRHostCommunicator.swift */,
+				703D63832CE7217000760730 /* FMRBranchEndpointGroup.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		703D637B2CE3277B00760730 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				703D63792CE3277300760730 /* FMRAddAccountViewModel.swift */,
+				703D637C2CE4A3F600760730 /* FMRSettingViewModel.swift */,
+				703D63872CE7246800760730 /* FMRMergeRequestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		704479D12C880866005A1449 /* Ruby */ = {
+			isa = PBXGroup;
+			children = (
+				704479E22C8962B4005A1449 /* DSL.rb */,
+				704479E12C8962B4005A1449 /* podfile.rb */,
+				704479DB2C885787005A1449 /* PodfileAnalysis.rb */,
+			);
+			path = Ruby;
+			sourceTree = "<group>";
+		};
+		704479D22C880873005A1449 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				703D637B2CE3277B00760730 /* ViewModel */,
+				703D631D2CCB755E00760730 /* HTTP */,
+				7077D34F2CBE7902009DE310 /* Models */,
+				7077D34E2CBE78E9009DE310 /* Utils */,
+				7077D34D2CBE78C0009DE310 /* Views */,
+				7077D34C2CBE78AA009DE310 /* ViewControllers */,
+				7077D3432CBE4CCE009DE310 /* NibBridge */,
+				7012CE5C2C7F1AA300BE53BA /* AppDelegate.swift */,
+				7058FE482C81A4170001696D /* FMRApplication.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		7077D3432CBE4CCE009DE310 /* NibBridge */ = {
+			isa = PBXGroup;
+			children = (
+				7077D34A2CBE4CED009DE310 /* NibView.swift */,
+			);
+			path = NibBridge;
+			sourceTree = "<group>";
+		};
+		7077D34C2CBE78AA009DE310 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7058FE4A2C81C2000001696D /* FMRSettingViewController.swift */,
+				7058FE462C806EA70001696D /* FMRHomeViewController.swift */,
+				704479CF2C86BB5A005A1449 /* FMRNavigationViewController.swift */,
+				7012CE5E2C7F1AA300BE53BA /* FMRViewController.swift */,
+				7077D3652CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7077D34D2CBE78C0009DE310 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				704479CD2C85DCE8005A1449 /* FMRToast.swift */,
+				7012CEB32C8022B600BE53BA /* FMRLoadingView.swift */,
+				70333B402CB53E27001EF97F /* FMRMenuTableCell.swift */,
+				70333B442CB91E28001EF97F /* FMRConfigurationView.swift */,
+				7077D3562CC1009F009DE310 /* FMRAccountView.swift */,
+				7077D3582CC20A62009DE310 /* FMRCheckCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7077D34E2CBE78E9009DE310 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				704479DD2C885ED1005A1449 /* FMRCmd.swift */,
+				704479E52C89AAE4005A1449 /* FMRTool.swift */,
+				704479E72C8AF94E005A1449 /* FMRFileAccessManager.swift */,
+				7077D35A2CC23BA3009DE310 /* FMRCache.swift */,
+				703D631E2CCF364100760730 /* FMRAccountManager.swift */,
+				703D637E2CE4A48500760730 /* FMRVerify.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7077D34F2CBE7902009DE310 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				704479DF2C885F06005A1449 /* FMRPodfile.swift */,
+				7077D3632CC674B1009DE310 /* FMRAccountModel.swift */,
+				703D63222CD1D51600760730 /* FMRMergeRequestModel.swift */,
+				703D63852CE7238D00760730 /* FMRBranchModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7012CE582C7F1AA300BE53BA /* FastMergeRequest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7012CE7E2C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequest" */;
+			buildPhases = (
+				7012CE552C7F1AA300BE53BA /* Sources */,
+				7012CE562C7F1AA300BE53BA /* Frameworks */,
+				7012CE572C7F1AA300BE53BA /* Resources */,
+				7012CE972C7F1BB500BE53BA /* Embed ExtensionKit Extensions */,
+				7012CEAF2C7F1DD400BE53BA /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7012CEAA2C7F1DD400BE53BA /* PBXTargetDependency */,
+			);
+			name = FastMergeRequest;
+			packageProductDependencies = (
+				7077D35D2CC655AA009DE310 /* Alamofire */,
+				703D63252CD2200B00760730 /* Kingfisher */,
+				703D636F2CE1B2EB00760730 /* RxBlocking */,
+				703D63712CE1B2EB00760730 /* RxCocoa */,
+				703D63732CE1B2EB00760730 /* RxRelay */,
+			);
+			productName = FastMergeRequest;
+			productReference = 7012CE592C7F1AA300BE53BA /* FastMergeRequest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7012CE692C7F1AA600BE53BA /* FastMergeRequestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7012CE812C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestTests" */;
+			buildPhases = (
+				7012CE662C7F1AA600BE53BA /* Sources */,
+				7012CE672C7F1AA600BE53BA /* Frameworks */,
+				7012CE682C7F1AA600BE53BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7012CE6C2C7F1AA600BE53BA /* PBXTargetDependency */,
+			);
+			name = FastMergeRequestTests;
+			productName = FastMergeRequestTests;
+			productReference = 7012CE6A2C7F1AA600BE53BA /* FastMergeRequestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7012CE732C7F1AA600BE53BA /* FastMergeRequestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7012CE842C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestUITests" */;
+			buildPhases = (
+				7012CE702C7F1AA600BE53BA /* Sources */,
+				7012CE712C7F1AA600BE53BA /* Frameworks */,
+				7012CE722C7F1AA600BE53BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7012CE762C7F1AA600BE53BA /* PBXTargetDependency */,
+			);
+			name = FastMergeRequestUITests;
+			productName = FastMergeRequestUITests;
+			productReference = 7012CE742C7F1AA600BE53BA /* FastMergeRequestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7012CE9B2C7F1DD400BE53BA /* FastMergeRequestExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7012CEAC2C7F1DD400BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestExtension" */;
+			buildPhases = (
+				7012CE982C7F1DD400BE53BA /* Sources */,
+				7012CE992C7F1DD400BE53BA /* Frameworks */,
+				7012CE9A2C7F1DD400BE53BA /* Resources */,
+				7012CEB22C7F1F0300BE53BA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastMergeRequestExtension;
+			productName = FastMergeRequestExtension;
+			productReference = 7012CE9C2C7F1DD400BE53BA /* FastMergeRequestExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7012CE512C7F1AA300BE53BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					7012CE582C7F1AA300BE53BA = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					7012CE692C7F1AA600BE53BA = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 7012CE582C7F1AA300BE53BA;
+					};
+					7012CE732C7F1AA600BE53BA = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 7012CE582C7F1AA300BE53BA;
+					};
+					7012CE9B2C7F1DD400BE53BA = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 7012CE542C7F1AA300BE53BA /* Build configuration list for PBXProject "FastMergeRequest" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7012CE502C7F1AA300BE53BA;
+			packageReferences = (
+				7077D35C2CC655A9009DE310 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				703D63242CD2200B00760730 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
+			productRefGroup = 7012CE5A2C7F1AA300BE53BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7012CE582C7F1AA300BE53BA /* FastMergeRequest */,
+				7012CE692C7F1AA600BE53BA /* FastMergeRequestTests */,
+				7012CE732C7F1AA600BE53BA /* FastMergeRequestUITests */,
+				7012CE9B2C7F1DD400BE53BA /* FastMergeRequestExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7012CE572C7F1AA300BE53BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7077D3552CC10080009DE310 /* FMRAccountView.xib in Resources */,
+				704479E42C8962B4005A1449 /* DSL.rb in Resources */,
+				70333B3F2CB53DCB001EF97F /* FMRMenuTableCell.xib in Resources */,
+				7012CE612C7F1AA500BE53BA /* Assets.xcassets in Resources */,
+				7012CE642C7F1AA500BE53BA /* Main.storyboard in Resources */,
+				704479DC2C885787005A1449 /* PodfileAnalysis.rb in Resources */,
+				7077D3532CC0B376009DE310 /* FMRConfigurationView.xib in Resources */,
+				704479E32C8962B4005A1449 /* podfile.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE682C7F1AA600BE53BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE722C7F1AA600BE53BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE9A2C7F1DD400BE53BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7012CE552C7F1AA300BE53BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704479D02C86BB5A005A1449 /* FMRNavigationViewController.swift in Sources */,
+				703D636D2CDCBDB600760730 /* FMRUserEndpointGroup.swift in Sources */,
+				70333B452CB91E28001EF97F /* FMRConfigurationView.swift in Sources */,
+				703D637D2CE4A3F600760730 /* FMRSettingViewModel.swift in Sources */,
+				7058FE492C81A4170001696D /* FMRApplication.swift in Sources */,
+				703D63782CE2051F00760730 /* FMREndpointGroup.swift in Sources */,
+				7012CEB42C8022B600BE53BA /* FMRLoadingView.swift in Sources */,
+				703D63812CE6ED6500760730 /* FMRMergeRequestEndpointGroup.swift in Sources */,
+				70333B412CB53E27001EF97F /* FMRMenuTableCell.swift in Sources */,
+				703D63762CE2027100760730 /* FMRHostCommunicator.swift in Sources */,
+				704479E02C885F06005A1449 /* FMRPodfile.swift in Sources */,
+				7012CE5F2C7F1AA300BE53BA /* FMRViewController.swift in Sources */,
+				7077D3662CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift in Sources */,
+				703D63882CE7246800760730 /* FMRMergeRequestViewModel.swift in Sources */,
+				703D631F2CCF364100760730 /* FMRAccountManager.swift in Sources */,
+				704479E62C89AAE4005A1449 /* FMRTool.swift in Sources */,
+				703D63232CD1D51700760730 /* FMRMergeRequestModel.swift in Sources */,
+				703D637F2CE4A48500760730 /* FMRVerify.swift in Sources */,
+				7077D3592CC20A62009DE310 /* FMRCheckCell.swift in Sources */,
+				703D637A2CE3277300760730 /* FMRAddAccountViewModel.swift in Sources */,
+				703D63862CE7238D00760730 /* FMRBranchModel.swift in Sources */,
+				704479DE2C885ED1005A1449 /* FMRCmd.swift in Sources */,
+				703D63842CE7217000760730 /* FMRBranchEndpointGroup.swift in Sources */,
+				703D63212CCF9E6800760730 /* FMRGitlabAPIClient.swift in Sources */,
+				704479E82C8AF94E005A1449 /* FMRFileAccessManager.swift in Sources */,
+				7077D3642CC674B1009DE310 /* FMRAccountModel.swift in Sources */,
+				7012CE5D2C7F1AA300BE53BA /* AppDelegate.swift in Sources */,
+				7077D34B2CBE4CED009DE310 /* NibView.swift in Sources */,
+				7077D3572CC1009F009DE310 /* FMRAccountView.swift in Sources */,
+				7058FE472C806EA70001696D /* FMRHomeViewController.swift in Sources */,
+				704479CE2C85DCE8005A1449 /* FMRToast.swift in Sources */,
+				7077D35B2CC23BA3009DE310 /* FMRCache.swift in Sources */,
+				7058FE4B2C81C2000001696D /* FMRSettingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE662C7F1AA600BE53BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7012CE6F2C7F1AA600BE53BA /* FastMergeRequestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE702C7F1AA600BE53BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7012CE792C7F1AA600BE53BA /* FastMergeRequestUITests.swift in Sources */,
+				7012CE7B2C7F1AA600BE53BA /* FastMergeRequestUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7012CE982C7F1DD400BE53BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7012CEA42C7F1DD400BE53BA /* SourceEditorExtension.swift in Sources */,
+				7012CEA62C7F1DD400BE53BA /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7012CE6C2C7F1AA600BE53BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7012CE582C7F1AA300BE53BA /* FastMergeRequest */;
+			targetProxy = 7012CE6B2C7F1AA600BE53BA /* PBXContainerItemProxy */;
+		};
+		7012CE762C7F1AA600BE53BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7012CE582C7F1AA300BE53BA /* FastMergeRequest */;
+			targetProxy = 7012CE752C7F1AA600BE53BA /* PBXContainerItemProxy */;
+		};
+		7012CEAA2C7F1DD400BE53BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7012CE9B2C7F1DD400BE53BA /* FastMergeRequestExtension */;
+			targetProxy = 7012CEA92C7F1DD400BE53BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7012CE622C7F1AA500BE53BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7012CE632C7F1AA500BE53BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7012CE7C2C7F1AA600BE53BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7012CE7D2C7F1AA600BE53BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		7012CE7F2C7F1AA600BE53BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = FastMergeRequest/FastMergeRequest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastMergeRequest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fast MR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RESOURCES_TARGETED_DEVICE_FAMILY = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7012CE802C7F1AA600BE53BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = FastMergeRequest/FastMergeRequest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastMergeRequest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fast MR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7012CE822C7F1AA600BE53BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastMergeRequest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FastMergeRequest";
+			};
+			name = Debug;
+		};
+		7012CE832C7F1AA600BE53BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastMergeRequest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FastMergeRequest";
+			};
+			name = Release;
+		};
+		7012CE852C7F1AA600BE53BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FastMergeRequest;
+			};
+			name = Debug;
+		};
+		7012CE862C7F1AA600BE53BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FastMergeRequest;
+			};
+			name = Release;
+		};
+		7012CEAD2C7F1DD400BE53BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FastMergeRequestExtension/FastMergeRequestExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastMergeRequestExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FastMergeRequestExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequest.FastMergeRequestExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7012CEAE2C7F1DD400BE53BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FastMergeRequestExtension/FastMergeRequestExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WDZJRD8PQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastMergeRequestExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FastMergeRequestExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youdao.netease.FastMergeRequest.FastMergeRequestExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7012CE542C7F1AA300BE53BA /* Build configuration list for PBXProject "FastMergeRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7012CE7C2C7F1AA600BE53BA /* Debug */,
+				7012CE7D2C7F1AA600BE53BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7012CE7E2C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7012CE7F2C7F1AA600BE53BA /* Debug */,
+				7012CE802C7F1AA600BE53BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7012CE812C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7012CE822C7F1AA600BE53BA /* Debug */,
+				7012CE832C7F1AA600BE53BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7012CE842C7F1AA600BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7012CE852C7F1AA600BE53BA /* Debug */,
+				7012CE862C7F1AA600BE53BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7012CEAC2C7F1DD400BE53BA /* Build configuration list for PBXNativeTarget "FastMergeRequestExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7012CEAD2C7F1DD400BE53BA /* Debug */,
+				7012CEAE2C7F1DD400BE53BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		703D63242CD2200B00760730 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+		703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		7077D35C2CC655A9009DE310 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		703D63252CD2200B00760730 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 703D63242CD2200B00760730 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		703D636F2CE1B2EB00760730 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		703D63712CE1B2EB00760730 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		703D63732CE1B2EB00760730 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		7077D35D2CC655AA009DE310 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7077D35C2CC655A9009DE310 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7012CE512C7F1AA300BE53BA /* Project object */;
+}
