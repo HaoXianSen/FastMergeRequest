@@ -8,10 +8,6 @@
 import Cocoa
 import RxSwift
 
-protocol FMRViewControllerDelegate: NSObjectProtocol {
-    func openHomePage()
-}
-
 extension NSUserInterfaceItemIdentifier {
     static let indexColum = NSUserInterfaceItemIdentifier("indexColumIdentifier")
     static let podNameColum = NSUserInterfaceItemIdentifier("PodNameColumIdentifier")
@@ -32,7 +28,6 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var selectAllButton: NSButton!
     
-    weak var delegate: FMRViewControllerDelegate?
     var path: String!
     
     private lazy var reviewers: [String] = getReviwers()
@@ -49,7 +44,7 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        self.viewModel.getDevelopPods()
+        requestData()
     }
     
     private func buildUI() {
@@ -63,15 +58,25 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
         viewModel.developPodsSubject.asObserver()
             .skip(1)
             .subscribe { [weak self] developPods in
-            self?.tableView.reloadData()
+                guard let self = self else {
+                    return
+                }
+                FMRLoadingView.hide(on: self.view)
+                self.tableView.reloadData()
         } onError: { [weak self] error in
             guard let self = self else {
                 return
             }
+            FMRLoadingView.hide(on: self.view)
             showError(error.localizedDescription, on: self.view.window!, ok: { [weak self] in
-                self?.delegate?.openHomePage()
+                self?.navigationController?.popViewControllerAnimated(true)
             })
         }.disposed(by: disposeBag)
+    }
+    
+    private func requestData() {
+        FMRLoadingView.show(hint: "Loading", on: self.view)
+        self.viewModel.getDevelopPods()
     }
     
     @IBAction func clickedSelectAll(_ sender: NSButton) {
@@ -80,7 +85,7 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
     }
     
     @IBAction func back(_ sender: Any) {
-        delegate?.openHomePage()
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 

@@ -15,7 +15,7 @@ class FMRMergeRequestViewModel {
     var developPods: [FMRPodfile] {
         do {
             return try self.developPodsSubject.value()
-        } catch let error {
+        } catch _ {
             return []
         }
     }
@@ -44,9 +44,9 @@ class FMRMergeRequestViewModel {
         return Observable<FMRPodfile>.create { anyObserver in
             let disposables = Disposables.create()
 
-            let gitPath = self.projectPath.appendingPathExtension("git")
-            let branchCommand = "git --git-dir=\(gitPath.path()) branch --show-current"
-            let remoteCommand = "git --git-dir=\(gitPath.path()) config remote.origin.url"
+            let gitPath = self.projectPath.appending(path: ".git")
+            let branchCommand = "git --git-dir=\(gitPath.path) branch --show-current"
+            let remoteCommand = "git --git-dir=\(gitPath.path) config remote.origin.url"
             
             let mainWorkspaceResult = executeCommand(commond: "\(branchCommand) ; \(remoteCommand)", currentDirectoryURL: self.projectPath)
             

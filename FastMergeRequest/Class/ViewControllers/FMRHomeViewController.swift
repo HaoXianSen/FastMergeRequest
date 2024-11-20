@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import RxSwift
 
 class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible {
     weak var navigationController: FMRNavigationController?
@@ -14,13 +15,13 @@ class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible
     @IBOutlet weak var logoImageView: NSImageView!
     @IBOutlet weak var scrollView: NSScrollView!
     
-    private var recentlyProjects: [String] = []
-    private let cacheKey = "FMRHomeViewController.recentlyProjectsKey"
+    private let viewModel = FMRHomeViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
-        loadData()
+        setRx()
     }
     
     private func buildUI() {
@@ -31,17 +32,12 @@ class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible
         self.logoImageView.imageScaling = .scaleAxesIndependently
     }
     
-    private func loadData() {
-        guard let cacheRecentlyList = UserDefaults.standard.array(forKey: cacheKey) as? [String] else {
-            return
-        }
-        self.recentlyProjects =  cacheRecentlyList
-        self.tableView.reloadData()
-    }
-    
-    private func cacheRecentlyOpenList() {
-        UserDefaults.standard.setValue(self.recentlyProjects, forKey: cacheKey)
-        UserDefaults.standard.synchronize()
+    private func setRx() {
+        viewModel.recentOpenedProjectsSubject.asObservable().subscribe { [weak self] projects in
+            self?.tableView.reloadData()
+        }.disposed(by: self.disposeBag)
+        
+        viewModel.loadRecentOpenedProjects()
     }
     
     @IBAction func openNewProject(_ sender: Any) {
@@ -55,13 +51,8 @@ class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible
             return
         }
         
-        recentlyProjects.removeAll(where: {$0 == path.path() || $0 == path.path})
-        recentlyProjects.insert(path.path, at: 0)
-        cacheRecentlyOpenList()
-        FMRFileAccessManager.manager.saveFilePermission(path: path.path)
-        FMRFileAccessManager.manager.saveFilePermission(path: podfilePath.path)
-        openProject(with: podfilePath.path())
-        tableView.reloadData()
+        viewModel.addProject(projectPath: podfilePath)
+        openProject(with: podfilePath.path)
     }
     
     private func openProject(with path: String) {
@@ -96,7 +87,7 @@ class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible
 
 extension FMRHomeViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return recentlyProjects.count
+        return viewModel.recentOpenedProjectsSubject.value.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -106,7 +97,7 @@ extension FMRHomeViewController: NSTableViewDelegate, NSTableViewDataSource {
         
         if id.rawValue == "FileColumnIdentifier" {
             let cell = tableView.makeView(withIdentifier: id, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = recentlyProjects[row]
+            cell.textField?.stringValue = viewModel.recentOpenedProjectsSubject.value[row]
             return cell
         }
         
@@ -122,12 +113,12 @@ extension FMRHomeViewController: NSTableViewDelegate, NSTableViewDataSource {
         guard tableView.selectedRow != -1 else {
             return 
         }
-        let path = recentlyProjects[tableView.selectedRow]
+        let path = viewModel.recentOpenedProjectsSubject.value[tableView.selectedRow]
         guard let restoreURL = FMRFileAccessManager.manager.accessFile(path: path.appending("/Podfile")),
               let _ = FMRFileAccessManager.manager.accessFile(path: path) else {
             return
         }
-        openProject(with: restoreURL.path())
+        openProject(with: restoreURL.path)
         tableView.deselectRow(tableView.selectedRow)
     }
 }

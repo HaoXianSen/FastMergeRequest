@@ -6,9 +6,7 @@
 //
 
 import Cocoa
-
-
-import Cocoa
+import SnapKit
 
 // MARK: Stack
 
@@ -102,7 +100,7 @@ class FMRNavigationController: NSViewController {
     
     /** The root view controller on the bottom of the stack. */
 
-    fileprivate(set) var rootViewController: NSViewController
+    fileprivate(set) var rootViewController: NSViewController!
     
     /** The current view controller stack. */
     var viewControllers: [NSViewController] {
@@ -157,23 +155,25 @@ class FMRNavigationController: NSViewController {
      */
     
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         if let homeViewController = storyboard.instantiateController(withIdentifier: "FMRHomeViewController") as? FMRHomeViewController {
             self.rootViewController = homeViewController
+            homeViewController.navigationController = self
         } else {
             self.rootViewController = NSViewController()
         }
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder: NSCoder) {
+        super.init(coder: coder)
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         if let homeViewController = storyboard.instantiateController(withIdentifier: "FMRHomeViewController") as? FMRHomeViewController {
             self.rootViewController = homeViewController
+            homeViewController.navigationController = self
         } else {
             self.rootViewController = NSViewController()
         }
-        super.init(coder: coder)
     }
     
     override func viewDidLoad() {
@@ -203,7 +203,7 @@ class FMRNavigationController: NSViewController {
         }
         
         self._activeView = viewController.view
-        self.addActiveViewAnimated(animated, subtype: CATransitionSubtype.fromLeft)
+        self.addActiveViewAnimated(animated, subtype: CATransitionSubtype.fromRight)
     }
     
     /**
@@ -211,6 +211,7 @@ class FMRNavigationController: NSViewController {
      - parameter animated: Set this value to YES to animate the transition, NO otherwise.
      - returns: The popped view controller.
      */
+    @discardableResult
     func popViewControllerAnimated(_ animated: Bool) -> NSViewController? {
         if self._stack.count == 0 {
             return nil
@@ -232,6 +233,7 @@ class FMRNavigationController: NSViewController {
      - parameter animated: Set this value to YES to animate the transitions if any, NO otherwise.
      - returns: The popped view controllers.
      */
+    @discardableResult
     func popToRootViewControllerAnimated(_ animated: Bool) -> [NSViewController]? {
         if self._stack.count == 0 {
             return nil;
@@ -255,7 +257,10 @@ class FMRNavigationController: NSViewController {
             self.view.animator().addSubview(self._activeView!)
         } else {
             self.view.addSubview(self._activeView!)
-            self._activeView?.bounds = self.view.bounds
         }
+        
+        self._activeView?.snp.makeConstraints({ make in
+            make.edges.equalToSuperview()
+        })
     }
 }

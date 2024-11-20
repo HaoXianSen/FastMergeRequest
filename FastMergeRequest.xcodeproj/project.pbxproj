@@ -53,6 +53,8 @@
 		7058FE472C806EA70001696D /* FMRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE462C806EA70001696D /* FMRHomeViewController.swift */; };
 		7058FE492C81A4170001696D /* FMRApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE482C81A4170001696D /* FMRApplication.swift */; };
 		7058FE4B2C81C2000001696D /* FMRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058FE4A2C81C2000001696D /* FMRSettingViewController.swift */; };
+		706004852CEDD586001E0084 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 706004842CEDD586001E0084 /* SnapKit */; };
+		706004872CEDD8C3001E0084 /* FMRHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706004862CEDD8C3001E0084 /* FMRHomeViewModel.swift */; };
 		7077D34B2CBE4CED009DE310 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077D34A2CBE4CED009DE310 /* NibView.swift */; };
 		7077D3532CC0B376009DE310 /* FMRConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7077D3522CC0B376009DE310 /* FMRConfigurationView.xib */; };
 		7077D3552CC10080009DE310 /* FMRAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7077D3542CC10080009DE310 /* FMRAccountView.xib */; };
@@ -172,6 +174,7 @@
 		7058FE462C806EA70001696D /* FMRHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRHomeViewController.swift; sourceTree = "<group>"; };
 		7058FE482C81A4170001696D /* FMRApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRApplication.swift; sourceTree = "<group>"; };
 		7058FE4A2C81C2000001696D /* FMRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRSettingViewController.swift; sourceTree = "<group>"; };
+		706004862CEDD8C3001E0084 /* FMRHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRHomeViewModel.swift; sourceTree = "<group>"; };
 		7077D34A2CBE4CED009DE310 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		7077D3522CC0B376009DE310 /* FMRConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRConfigurationView.xib; sourceTree = "<group>"; };
 		7077D3542CC10080009DE310 /* FMRAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRAccountView.xib; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 				703D63742CE1B2EB00760730 /* RxRelay in Frameworks */,
 				703D63262CD2200B00760730 /* Kingfisher in Frameworks */,
 				703D63702CE1B2EB00760730 /* RxBlocking in Frameworks */,
+				706004852CEDD586001E0084 /* SnapKit in Frameworks */,
 				703D63722CE1B2EB00760730 /* RxCocoa in Frameworks */,
 				7077D35E2CC655AA009DE310 /* Alamofire in Frameworks */,
 			);
@@ -316,6 +320,7 @@
 				703D63792CE3277300760730 /* FMRAddAccountViewModel.swift */,
 				703D637C2CE4A3F600760730 /* FMRSettingViewModel.swift */,
 				703D63872CE7246800760730 /* FMRMergeRequestViewModel.swift */,
+				706004862CEDD8C3001E0084 /* FMRHomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				703D636F2CE1B2EB00760730 /* RxBlocking */,
 				703D63712CE1B2EB00760730 /* RxCocoa */,
 				703D63732CE1B2EB00760730 /* RxRelay */,
+				706004842CEDD586001E0084 /* SnapKit */,
 			);
 			productName = FastMergeRequest;
 			productReference = 7012CE592C7F1AA300BE53BA /* FastMergeRequest.app */;
@@ -526,6 +532,7 @@
 				7077D35C2CC655A9009DE310 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				703D63242CD2200B00760730 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				706004832CEDD586001E0084 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 7012CE5A2C7F1AA300BE53BA /* Products */;
 			projectDirPath = "";
@@ -596,6 +603,7 @@
 				704479E02C885F06005A1449 /* FMRPodfile.swift in Sources */,
 				7012CE5F2C7F1AA300BE53BA /* FMRViewController.swift in Sources */,
 				7077D3662CC900BC009DE310 /* FMRAddGitlabAccountViewController.swift in Sources */,
+				706004872CEDD8C3001E0084 /* FMRHomeViewModel.swift in Sources */,
 				703D63882CE7246800760730 /* FMRMergeRequestViewModel.swift in Sources */,
 				703D631F2CCF364100760730 /* FMRAccountManager.swift in Sources */,
 				704479E62C89AAE4005A1449 /* FMRTool.swift in Sources */,
@@ -1055,6 +1063,14 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		706004832CEDD586001E0084 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		7077D35C2CC655A9009DE310 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1085,6 +1101,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 703D636E2CE1B2EB00760730 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
+		};
+		706004842CEDD586001E0084 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 706004832CEDD586001E0084 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		7077D35D2CC655AA009DE310 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

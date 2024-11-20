@@ -12,6 +12,7 @@ class FMRCache: NSObject {
     static let reviewersCacheKey: CacheKey = "FMRSettingViewController.cacheKey"
     static let targetBranchesCacheKey: CacheKey = "FMRSettingViewController.targetBranchCacheKey"
     static let accountKey: CacheKey = "FMRSettingViewController.accountKey"
+    static let recentlyOpenedProjectKey = "FMRHomeViewController.recentlyProjectsKey"
     
     static func cache(value: Any?, for key: CacheKey) {
         UserDefaults.standard.setValue(value, forKey: key)
