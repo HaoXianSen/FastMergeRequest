@@ -65,23 +65,9 @@ class FMRHomeViewController: NSViewController, FMRNavigationControllerCompatible
     }
     
     private func openFileSelection() {
-        let panel = NSOpenPanel()
-        panel.prompt = "choose"
-        panel.canChooseFiles = false
-        panel.canChooseDirectories = true
-        panel.allowsMultipleSelection = false
-        panel.becomesKeyOnlyIfNeeded = true
-        panel.beginSheetModal(for: self.view.window!, completionHandler: { [weak self] modalResponse in
-            if modalResponse != .OK {
-                return
-            }
-            
-            let paths = panel.urls
-            guard let path = paths.first else {
-                return
-            }
+        FMRChoosePanel.singleDirectorySelectionPanel(title: "Choose", window: self.view.window!) { [weak self] path in
             self?.openDirectory(path)
-        })
+        }
     }
 }
 

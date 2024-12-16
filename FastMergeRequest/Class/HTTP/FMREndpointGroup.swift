@@ -17,12 +17,15 @@ public class FMREndpointGroup {
         self.hostCommunicator = hostCommunicator
     }
     
+    internal func request(path: String, method: HTTPMethod = .get, parameters: Parameters) -> DataRequest {
+        let path = self.hostCommunicator.baseURL.appendingPathComponent(path).absoluteString.removingPercentEncoding ?? ""
+        let header = self.hostCommunicator.header
+        return AF.request(path, method: method, parameters: parameters, headers: header).validate()
+    }
+    
     internal func request<T: Codable>(path: String, method: HTTPMethod = .get, parameters: Parameters) -> Observable<T> {
         return Observable<T>.create { anyObserver -> Disposable in
-            let path = self.hostCommunicator.baseURL.appendingPathComponent(path).absoluteString.removingPercentEncoding ?? ""
-            let header = self.hostCommunicator.header
-            AF.request(path, method: method, parameters: parameters, headers: header)
-                .validate()
+            self.request(path: path, method: method, parameters: parameters)
                 .responseDecodable(of: T.self) { response in
                     switch response.result {
                     case .success(let obj):

@@ -25,7 +25,7 @@ class FMRAddAccountViewModel: NSObject {
             }
             
             let apiClient = FMRGitlabAPIClient(host: hostURL, privateToken: privateToken)
-            apiClient.userEndPoint.getCurrentUser().subscribe { user in
+            apiClient.userEndpoint.getCurrentUser().subscribe { user in
                 var newUser = user
                 newUser.host = host
                 newUser.privateToken = privateToken

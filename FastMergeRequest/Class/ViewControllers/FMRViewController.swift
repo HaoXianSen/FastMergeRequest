@@ -30,10 +30,7 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
     
     var path: String!
     
-    private lazy var reviewers: [String] = getReviwers()
-    private lazy var targetBranches: [String] = getTargetBranches()
     private var viewModel: FMRMergeRequestViewModel!
-    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -80,22 +77,29 @@ class FMRViewController: NSViewController, FMRNavigationControllerCompatible {
     }
     
     @IBAction func clickedSelectAll(_ sender: NSButton) {
-        sender.title = self.viewModel.isSelectAll ? "unselect all" : "select all"
+        sender.title = self.viewModel.isSelectAll ? "Unselect all" : "Select all"
         self.viewModel.whetherSelectAll()
+    }
+    
+    @IBAction func createMergeRequest(_ sender: Any) {
+        FMRLoadingView.show(hint: "Creating...", on: self.view)
+        self.viewModel.createMergeRequest().subscribe { [weak self] results in
+            guard let self = self else {
+                return 
+            }
+            FMRLoadingView.hide(on: self.view)
+            let storyboard = NSStoryboard(name: "Main", bundle: nil)
+            guard let viewController = storyboard.instantiateController(withIdentifier: "FMRMRResultViewController") as? FMRMRResultViewController else {
+                return
+            }
+            viewController.mrResults = results
+            self.presentAsModalWindow(viewController)
+        }.disposed(by: self.disposeBag)
+
     }
     
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewControllerAnimated(true)
-    }
-}
-
-extension FMRViewController {
-    private func getReviwers() -> [String] {
-        return FMRCache.cache(for: FMRCache.reviewersCacheKey) ?? []
-    }
-    
-    private func getTargetBranches() -> [String] {
-        return FMRCache.cache(for: FMRCache.targetBranchesCacheKey) ?? []
     }
 }
 
@@ -109,6 +113,7 @@ extension FMRViewController: NSTableViewDataSource, NSTableViewDelegate {
             return nil
         }
         
+        let pod = self.viewModel.developPods[row]
         if identifier == .indexColum {
             let cell: FMRCheckCell? = getTableCell(from: tableView, id: .checkedRow)
             cell?.clickedCheckBoxFeedback = { [weak self] checked in
@@ -117,28 +122,33 @@ extension FMRViewController: NSTableViewDataSource, NSTableViewDelegate {
                 }
                 self.viewModel.select(index: row)
             }
-            cell?.checked = self.viewModel.developPods[row].checked
+            cell?.checked = pod.checked
             return cell
         } else if identifier == .podNameColum {
             let cell: NSTableCellView? = getTableCell(from: tableView, id: .textfiledRow)
-            cell?.textField?.stringValue = self.viewModel.developPods[row].podName
+            cell?.textField?.stringValue = pod.podName
             return cell
         } else if identifier == .sourceBranchColum {
             let cell: NSTableCellView? = getTableCell(from: tableView, id: .textfiledRow)
-            cell?.textField?.stringValue = self.viewModel.developPods[row].requirements?.branch ?? "undefined"
+            cell?.textField?.stringValue = pod.branch ?? "undefined"
             return cell
         } else if identifier == .targetBranchColum {
+            var brancheNames = pod.targetBranches?.map({ branch in
+                return branch.name ?? ""
+            })
+            brancheNames?.removeAll(where: {$0.isEmpty})
             let cell: FMRMenuTableCell? = getTableCell(from: tableView, id: .selectionRow)
-            cell?.dataSource = targetBranches
+            cell?.dataSource = brancheNames ?? ["master"]
             return cell
         } else if identifier == .assginColum {
             let cell: FMRMenuTableCell? = getTableCell(from: tableView, id: .selectionRow)
-            cell?.dataSource = reviewers
+            let names = pod.reviewers?.map({$0.name})
+            cell?.dataSource = names ?? []
             return cell
         } else if identifier == .commentColum {
             let cell: NSTableCellView? = getTableCell(from: tableView, id: .textfiledRow)
             cell?.textField?.isEditable = true
-            cell?.textField?.stringValue = "Automatically create"
+            cell?.textField?.stringValue = pod.targetBranch?.commit?.message ?? "Automatically create"
             return cell
         }
         return nil

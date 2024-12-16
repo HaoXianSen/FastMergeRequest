@@ -35,6 +35,24 @@
         "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
         "version" : "5.7.1"
       }
+    },
+    {
+      "identity" : "swiftxlsx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/3973770/SwiftXLSX",
+      "state" : {
+        "revision" : "f2604c774dd55afd8c2b6f50e40cf204ea32fe11",
+        "version" : "0.1.4"
+      }
+    },
+    {
+      "identity" : "ziparchive",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZipArchive/ZipArchive.git",
+      "state" : {
+        "revision" : "38e0ce0598e06b034271f296a8e15b149c91aa19",
+        "version" : "2.4.3"
+      }
     }
   ],
   "version" : 2

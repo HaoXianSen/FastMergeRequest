@@ -7,6 +7,7 @@
 
 import Cocoa
 import RxSwift
+import Alamofire
 
 public class FMRMergeRequestEndpointGroup: FMREndpointGroup {
     enum Endpoint {
@@ -15,18 +16,35 @@ public class FMRMergeRequestEndpointGroup: FMREndpointGroup {
         func path() -> String {
             switch self {
             case .create(let projectPath):
-                let encodePath = projectPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? projectPath
+                let encodePath = projectPath.replacingOccurrences(of: "/", with: "%2F")
                 return "/projects/\(encodePath)/merge_requests"
             }
         }
     }
     
+    public struct MergeRequestError<T>: Error, Sendable where T: Sendable {
+        public let error: AFError
+        public let response: AFDataResponse<T>
+    }
+    
     public func create(project: String, sourceBranch: String, targetBranch: String, title: String, assigneeIds: [Int], reviewerIds: [Int]) -> Observable<FMRMergeRequestModel> {
-        let params: [String: Any] = ["source_branch": sourceBranch,
-                      "target_branch": targetBranch,
-                      "title": title,
-                      "assigneeIds": assigneeIds,
-                      "reviewer_ids": reviewerIds]
-        return self.request(path: Endpoint.create(projectPath: project).path(), method: .post, parameters: params)
+        return Observable<FMRMergeRequestModel>.create { anyObserver -> Disposable in
+            let params: [String: Any] = ["source_branch": sourceBranch,
+                          "target_branch": targetBranch,
+                          "title": title,
+                          "assigneeIds": assigneeIds,
+                          "reviewer_ids": reviewerIds]
+            self.request(path: Endpoint.create(projectPath: project).path(), method: .post, parameters: params)
+                .responseDecodable(of: FMRMergeRequestModel.self) { response in
+                    switch response.result {
+                    case .success(let obj):
+                        anyObserver.onNext(obj)
+                    case .failure(let error):
+                        anyObserver.onError(MergeRequestError(error: error, response: response))
+                    }
+                    anyObserver.onCompleted()
+                }
+            return Disposables.create()
+        }
     }
 }

@@ -83,7 +83,7 @@ extension FMRSettingViewModel {
     
     func getUser(with email: String,  completion: @escaping (_ user: FMRUserModel?, _ error: Error?) -> Void) {
         let client = FMRGitlabAPIClient()
-        client.userEndPoint.getUser(with: email).subscribe { userModels in
+        client.userEndpoint.getUser(with: email).subscribe { userModels in
             guard let userModel = userModels.first else {
                 completion(nil, NSError(error: "Can't find \(email) user"))
                 return

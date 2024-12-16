@@ -22,3 +22,14 @@ public struct FMRMergeRequestModel: Codable {
     var updated_at: String?
     var merge_error: String?
 }
+
+struct FMRMergeRequestError: Codable {
+    let errors: [String]
+    let code: Int
+}
+
+struct FMRMergeRequestResult: Codable {
+    let mergeRequest: FMRMergeRequestModel?
+    let pod: FMRPodModel
+    let error: FMRMergeRequestError?
+}

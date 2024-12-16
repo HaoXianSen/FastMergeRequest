@@ -15,13 +15,13 @@ public class FMRBranchEndpointGroup: FMREndpointGroup {
         func path() -> String {
             switch self {
             case .branches(let projectPath):
-                let encodePath = projectPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? projectPath
+                let encodePath = projectPath.replacingOccurrences(of: "/", with: "%2F")
                 return "/projects/\(encodePath)/repository/branches"
             }
         }
     }
     
     public func branches(for project: String) -> Observable<[FMRBranchModel]> {
-        return self.request(path: Endpoint.branches(projectPath: project).path(), parameters: [:])
+        return self.request(path: Endpoint.branches(projectPath: project).path(), parameters: ["per_page": 100])
     }
 }

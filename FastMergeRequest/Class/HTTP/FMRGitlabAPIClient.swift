@@ -29,7 +29,15 @@ public class FMRGitlabAPIClient {
         }
     }
     
-    public var userEndPoint: FMRUserEndpointGroup {
+    public var userEndpoint: FMRUserEndpointGroup {
+        return creatEndpointGroup()
+    }
+    
+    public var brancheEndpoint: FMRBranchEndpointGroup {
+        return creatEndpointGroup()
+    }
+    
+    public var mergeRequestEndpoint: FMRMergeRequestEndpointGroup {
         return creatEndpointGroup()
     }
     
